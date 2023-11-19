@@ -1,0 +1,30 @@
+# Dependency directories
+/node_modules
+/.pnp
+.pnp.js
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Built files
+/dist
+/build
+/*.log
+npm-debug.log*
+
+# Cache and build files
+.cache/
+.eslintcache
+*.mdx-*.js
+
+# IDE files
+/.vscode
+/.idea
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
