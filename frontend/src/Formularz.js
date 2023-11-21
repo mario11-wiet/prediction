@@ -69,11 +69,11 @@ const Formularz = () => {
 
     const ageRegex = /^[0-9]+$/;
 
-    // Walidacja pola "age"
+    // Validation of "age"
     if (formData.age.trim() === "" || !formData.age.match(ageRegex)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        age: "Wprowadź poprawny wiek (liczba)",
+        age: "Please enter a valid age (number)",
       }));
       return;
     }
@@ -102,35 +102,35 @@ const Formularz = () => {
   };
 
   const formFields = {
-    sex: "Płeć",
-    age: "Wiek",
-    famsize: "Rozmiar rodziny",
-    Pstatus: "Status separacji rodziców",
-    Medu: "Edukacja matki",
-    Fedu: "Edukacja ojca",
-    Mjob: "Praca matki",
-    Fjob: "Praca ojca",
-    reason: "Powód wyboru szkoły",
-    guardian: "Opiekun prawny",
-    traveltime: "Czas podróży do szkoły",
-    studytime: "Czas poświęcony na naukę",
-    failures: "Liczba przeszłych niezaliczonych przedmiotów",
-    schoolsup: "Szkolne dodatkowe wsparcie edukacyjne",
-    famsup: "Wsparcie edukacyjne ze strony rodziny",
-    paid: "Dodatkowe płatne zajęcia edukacyjne",
-    activities: "Dodatkowe zajęcia pozaszkolne",
-    nursery: "Uczęszczanie do przedszkola przed szkołą",
-    higher: "Chęć podjęcia wyższych studiów",
-    internet: "Dostęp do internetu w domu",
-    romantic: "W związku",
-    famrel: "Jakość relacji z rodziną",
-    freetime: "Ilość wolnego czasu",
-    goout: "Ilość wyjść ze znajomymi",
-    Dalc: "Konsumpcja alkoholu w dni robocze",
-    Walc: "Konsumpcja alkoholu w weekendy",
-    health: "Stan zdrowia",
-    absences: "Liczba nieobecności w szkole",
-  };
+    sex: "Sex",
+    age: "Age",
+    famsize: "Family Size",
+    Pstatus: "Parents' Separation Status",
+    Medu: "Mother's Education",
+    Fedu: "Father's Education",
+    Mjob: "Mother's Job",
+    Fjob: "Father's Job",
+    reason: "Reason for Choosing the School",
+    guardian: "Legal Guardian",
+    traveltime: "Travel Time to School",
+    studytime: "Study Time",
+    failures: "Number of Past Failures",
+    schoolsup: "School's Extra Educational Support",
+    famsup: "Family Educational Support",
+    paid: "Paid Extra Classes",
+    activities: "Extracurricular Activities",
+    nursery: "Attended Nursery School",
+    higher: "Desire for Higher Education",
+    internet: "Internet Access at Home",
+    romantic: "In a Romantic Relationship",
+    famrel: "Family Relationship Quality",
+    freetime: "Amount of Free Time",
+    goout: "Time Spent Going Out with Friends",
+    Dalc: "Weekday Alcohol Consumption",
+    Walc: "Weekend Alcohol Consumption",
+    health: "Health Status",
+    absences: "Number of School Absences",
+};
 
   const RadioButton = ({ name, value, onChange, style }) => {
     return (
@@ -143,79 +143,79 @@ const Formularz = () => {
       case 'sex':
         return(
           <div>
-            <span>Mężczyzna</span><RadioButton name={key} value='M' onChange={handleChange} style={styles.input}/>
-            <span>Kobieta</span><RadioButton name={key} value='F' onChange={handleChange} style={styles.input}/>
+            <span>Man</span><RadioButton name={key} value='M' onChange={handleChange} style={styles.input}/>
+            <span>Woman</span><RadioButton name={key} value='F' onChange={handleChange} style={styles.input}/>
           </div>
         )
       case 'famsize':
         return (
         <div>
-          <span>Mniejszy niż 4 osoby</span><RadioButton name={key} value='LE3' onChange={handleChange} style={styles.input}/>
-          <span>4 osoby lub więcej</span><RadioButton name={key} value='GT3' onChange={handleChange} style={styles.input}/>
+          <span>Less than 4 people</span><RadioButton name={key} value='LE3' onChange={handleChange} style={styles.input}/>
+          <span>4 or more people</span><RadioButton name={key} value='GT3' onChange={handleChange} style={styles.input}/>
         </div>
         )
       case 'Pstatus':
           return (
           <div>
-            <span>Żyją razem</span><RadioButton name={key} value='T' onChange={handleChange} style={styles.input}/>
-            <span>W separacji</span><RadioButton name={key} value='A' onChange={handleChange} style={styles.input}/>
+            <span>Live together</span><RadioButton name={key} value='T' onChange={handleChange} style={styles.input}/>
+            <span>In separation</span><RadioButton name={key} value='A' onChange={handleChange} style={styles.input}/>
           </div>
           )
       case 'Medu':
       case 'Fedu':
         return (
         <div>
-          <span>Brak</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/>
-          <span>Podstawowe</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
-          <span>Gimnazjalne</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
-          <span>Średnie</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
-          <span>Wyższe</span><RadioButton name={key} value='4' onChange={handleChange} style={styles.input}/>
+          <span>None</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/>
+          <span>Primary</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
+          <span>Lower Secondary</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
+          <span>Upper Secondary</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
+          <span>Higher Education</span><RadioButton name={key} value='4' onChange={handleChange} style={styles.input}/>
         </div>
         )
       case 'Mjob':
       case 'Fjob':
         return (
           <div>
-            <span>Praca w domu</span><RadioButton name={key} value='at_home' onChange={handleChange} style={styles.input}/>
-            <span>Inne</span><RadioButton name={key} value='other' onChange={handleChange} style={styles.input}/>
-            <span>Służba zdrowia</span><RadioButton name={key} value='health' onChange={handleChange} style={styles.input}/>
-            <span>Nauczyciel</span><RadioButton name={key} value='teacher' onChange={handleChange} style={styles.input}/>
-            <span>Usługi</span><RadioButton name={key} value='services' onChange={handleChange} style={styles.input}/>
+            <span>Home Work</span><RadioButton name={key} value='at_home' onChange={handleChange} style={styles.input}/>
+            <span>Other</span><RadioButton name={key} value='other' onChange={handleChange} style={styles.input}/>
+            <span>Health Services</span><RadioButton name={key} value='health' onChange={handleChange} style={styles.input}/>
+            <span>Teacher</span><RadioButton name={key} value='teacher' onChange={handleChange} style={styles.input}/>
+            <span>Services</span><RadioButton name={key} value='services' onChange={handleChange} style={styles.input}/>
           </div>
           )
       case 'reason':
         return (
           <div>
-            <span>Blisko domu</span><RadioButton name={key} value='close' onChange={handleChange} style={styles.input}/>
-            <span>Preferowany program</span><RadioButton name={key} value='course' onChange={handleChange} style={styles.input}/>
-            <span>Reputacja szkoły</span><RadioButton name={key} value='reputation' onChange={handleChange} style={styles.input}/>
-            <span>Inne</span><RadioButton name={key} value='other' onChange={handleChange} style={styles.input}/>
+            <span>Near Home</span><RadioButton name={key} value='close' onChange={handleChange} style={styles.input}/>
+            <span>Preferred Program</span><RadioButton name={key} value='course' onChange={handleChange} style={styles.input}/>
+            <span>School Reputation</span><RadioButton name={key} value='reputation' onChange={handleChange} style={styles.input}/>
+            <span>Other</span><RadioButton name={key} value='other' onChange={handleChange} style={styles.input}/>
           </div>
         )
       case 'guardian':
         return (
           <div>
-            <span>Mama</span><RadioButton name={key} value='mother' onChange={handleChange} style={styles.input}/>
-            <span>Tata</span><RadioButton name={key} value='father' onChange={handleChange} style={styles.input}/>
-            <span>Inny</span><RadioButton name={key} value='other' onChange={handleChange} style={styles.input}/>
+            <span>Mother</span><RadioButton name={key} value='mother' onChange={handleChange} style={styles.input}/>
+            <span>Father</span><RadioButton name={key} value='father' onChange={handleChange} style={styles.input}/>
+            <span>Other</span><RadioButton name={key} value='other' onChange={handleChange} style={styles.input}/>
           </div>
         )
       case 'traveltime':
         return (
           <div>
-            <span>mniej niż 15 minut</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/> 
-            <span>15 do 30 minut</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
-            <span>30 minut do godziny</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
-            <span>Ponad godzina</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
+            <span>Less than 15 minutes</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/> 
+            <span>15 to 30 minutes</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
+            <span>30 minutes to 1 hour</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
+            <span>More than 1 hour</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
           </div>
         )
       case 'studytime':
         return (
           <div>
-            <span>mniej niż 2 godziny</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/>
-            <span>2 do 5 godzin</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
-            <span>5 do 10 godzin</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
-            <span>Ponad 10 godzin</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
+            <span>Less than 2 hours</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/>
+            <span>2 to 5 hours</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
+            <span>5 to 10 hours</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
+            <span>More than 10 hours</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
           </div>
         )
       case 'schoolsup':
@@ -228,19 +228,19 @@ const Formularz = () => {
       case 'romantic':
         return(
           <div>
-            <span>Tak</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
-            <span>Nie</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/>
+            <span>Yes</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
+            <span>No</span><RadioButton name={key} value='0' onChange={handleChange} style={styles.input}/>
           </div>
         )
       case 'famrel':
       case 'health':
         return(
           <div>
-            <span>Bardzo złe</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
-            <span>Złe</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
-            <span>Przeciętne</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
-            <span>Dobre</span><RadioButton name={key} value='4' onChange={handleChange} style={styles.input}/>
-            <span>Wspaniałe</span><RadioButton name={key} value='5' onChange={handleChange} style={styles.input}/>
+            <span>Very Poor</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/>
+            <span>Poor</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
+            <span>Average</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
+            <span>Good</span><RadioButton name={key} value='4' onChange={handleChange} style={styles.input}/>
+            <span>Excellent</span><RadioButton name={key} value='5' onChange={handleChange} style={styles.input}/>
           </div>
         )
 
@@ -250,11 +250,11 @@ const Formularz = () => {
       case 'Walc':
         return(
           <div>
-            <span>Bardzo mało</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/> 
-            <span>Mało</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
-            <span>Przeciętne</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
-            <span>Dużo</span><RadioButton name={key} value='4' onChange={handleChange} style={styles.input}/>
-            <span>Bardzo dużo</span><RadioButton name={key} value='5' onChange={handleChange} style={styles.input}/>
+            <span>Very Little</span><RadioButton name={key} value='1' onChange={handleChange} style={styles.input}/> 
+            <span>Little</span><RadioButton name={key} value='2' onChange={handleChange} style={styles.input}/>
+            <span>Average</span><RadioButton name={key} value='3' onChange={handleChange} style={styles.input}/>
+            <span>Many</span><RadioButton name={key} value='4' onChange={handleChange} style={styles.input}/>
+            <span>Very Many</span><RadioButton name={key} value='5' onChange={handleChange} style={styles.input}/>
           </div>
         )
 
@@ -294,7 +294,7 @@ const Formularz = () => {
           </tbody>
         </table>
         <button type="submit" style={styles.button}>
-          Wyślij
+          Send
         </button>
       </form>
       <div id="explanation"></div>
