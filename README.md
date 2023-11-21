@@ -4,8 +4,9 @@ Student grade prediction with a web API
 ### Frontend (React):
 
 1. Navigate to the frontend directory: `cd frontend`
-2. Build the project: `npm run build`
-3. Start the development server: `npm run start`
+2. Install dependencies: `npm install`
+3. Build the project: `npm run build`
+4. Start the development server: `npm run start`
 
 ### Backend (Python - Flask):
 
@@ -26,8 +27,9 @@ Student grade prediction with a web API
     python3 setup.py install
     ```
 5. Available commands after installation:
-    - `explain_example`: Run an example
-    - `run`: Start the Flask application (serving the frontend)
     - `train_model`: Train the model using provided data
+    - `run`: Start the Flask application (serving the frontend)
+    - `explain_example`: Run an example
+
 
 Before executing `run`, ensure that you've trained the model using the `train_model` command.
