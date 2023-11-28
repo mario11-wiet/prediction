@@ -271,7 +271,8 @@ const Formularz = () => {
   }
 
   return (
-    <div>
+    <div style={styles.root}>
+      <span style={styles.title}>How can I improve my grades?</span>
       <form onSubmit={handleSubmit} style={styles.form}>
         <table>
           <tbody>
@@ -294,7 +295,7 @@ const Formularz = () => {
           </tbody>
         </table>
         <button type="submit" style={styles.button}>
-          Send
+          Check
         </button>
       </form>
       <div id="explanation"></div>
@@ -302,27 +303,54 @@ const Formularz = () => {
   );
 };
 
+const colorPrimary = '#ebe0d6';
+const colorSecondary = '#6d4c3d';
+const colorTertiary = '#ebe0d6';
+
 const styles = {
+  root: {
+    height: '100vw',
+    width: '100vw',
+    backgroundColor: colorPrimary,
+    color: colorTertiary,
+    display:'flex',
+    flexDirection: 'column'
+  },
+  title: {
+    color: colorPrimary,
+    backgroundColor: colorSecondary,
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '10px auto',
+    width: "1000px",
+    padding: '15px',
+    borderRadius: '25px',
+    alignItems: "center",
+    fontSize: '25px',
+  },
   form: {
+    backgroundColor: colorSecondary,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    margin: "auto",
-    maxWidth: "1000px",
+    margin: '10px auto',
+    width: "1000px",
+    padding: '15px',
+    borderRadius: '25px',
   },
   label: {
     fontWeight: "bold",
-    marginBottom: "5px",
   },
   input: {
-    border: "1px solid #ccc",
+    border: `1px solid ${colorSecondary}`,
+    color: colorSecondary,
     borderRadius: "4px",
   },
   button: {
     marginTop: "10px",
     padding: "10px 15px",
-    backgroundColor: "#007bff",
-    color: "#fff",
+    backgroundColor: colorTertiary,
+    color: colorSecondary,
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
